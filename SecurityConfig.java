@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 // desactivation de CSRF Synchronised token
-		http.csrf().disable();
+		//http.csrf().disable();
 // Indiquer a Spring de ne pas creer une session
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 //utiliser page login de spring
