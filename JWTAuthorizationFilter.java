@@ -56,12 +56,12 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter{
 			response.setStatus(HttpServletResponse.SC_OK);// SC_OK : Status Code=OK
 			System.out.println("**** Requete OPTIONS a ete envoyee **** ");
 		} else {
-			String jwtToken=request.getHeader(SecurityConstants.HEADER_STRING);
-			 System.out.println("token stocker dans l'entete : "+jwtToken);
+			//String jwtToken=request.getHeader(SecurityConstants.HEADER_STRING);
+			// System.out.println("token stocker dans l'entete : "+jwtToken);
 			//== Si le token n'existe pas ou ne commence pas par le prefix Bearer
 			   if(jwtToken==null || !jwtToken.startsWith(SecurityConstants.TOKEN_PREFIX))
 			     { //-- On laisse Spring fait ce qu'il devait faire et on quitte
-				   System.out.println("token est null ou il n'existe pas :**= "+jwtToken);
+				  // System.out.println("token est null ou il n'existe pas :**= "+jwtToken);
 				   filterChain.doFilter(request, response);
 				   return;
 			        }
