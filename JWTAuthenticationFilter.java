@@ -80,7 +80,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 				.setExpiration(new Date(System.currentTimeMillis()+SecurityConstants.EXPIRATION_TIME))
 				.claim("roles", springUser.getAuthorities())
 //== Definition Header +Signature :				
-				.signWith(SignatureAlgorithm.HS256, SecurityConstants.SECRET)
+				.signWith(SignatureAlgorithm.HS256, "MySecret@@")
 				//pour utiliser l'encodage Base64URL 
 				.compact();	
 //== On ajoute dans l'entete de la reponse le token 
